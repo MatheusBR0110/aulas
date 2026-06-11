@@ -31,6 +31,14 @@ mensagem de erro ("Saldo insuficiente").
                 return "Saque realizado!";
             }else{return "Saldo insuficiente para está operação"}
         }
+       };
+
+       function executarSaque(){
+        let valorSaque = Number(document.getElementById("valSaque").value);
+        let mensagem = contaBancaria.sacar(valorSaque);
+
+        document.getElementById("txtSaldoCaixa").innerText = contaBancaria.saldo;
+        document.getElementById("msgErro").innerText = mensagem;
        }
     </script>
 </body>

@@ -19,7 +19,24 @@ contrário deve impedir a venda retornando um aviso de erro.
     <p id="msgVoo" style="color: blue;"></p>
 
     <script>
-       
+       const voo ={
+        assentosLivres: 5,
+        comprarPassagem: function(valor){
+            if(valor <= this.assentosLivres){
+                this.assentosLivres -= valor;
+                return "assento ocupado!";
+            }else{return "Assento não ocupado"}
+        }
+       };
+
+       function executarCompra(){
+        let valorPassagem = Number(document.getElementById("valPassagens").value);
+        let mensagem = voo.comprarPassagem(valorPassagem);
+
+        document.getElementById("txtAssentos").innerText = voo.assentosLivres;
+        document.getElementById("msgVoo").innerText = mensagem;
+       };
+
     </script>
 </body>
 </html>
