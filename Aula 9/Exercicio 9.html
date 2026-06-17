@@ -17,7 +17,21 @@ mas não pode deixar cair para menos de 0). Amarre os métodos aos botões de + 
     <button onclick="subFalta()">- Cancelar Falta</button>
 
     <script>
+       const placarFaltas ={
+        totalFaltas: 0,
+        adicionar: function(){this.totalFaltas++;},
+        remover: function(){if(this.totalFaltas>0){this.totalFaltas--;}}
+       };
        
+       function addFalta(){
+        placarFaltas.adicionar();
+        document.getElementById("numFaltas").innerText = placarFaltas.totalFaltas;
+       };
+
+       function subFalta(){
+        placarFaltas.remover();
+        document.getElementById("numFaltas").innerText = placarFaltas.totalFaltas;
+       };
     </script>
 </body>
 </html>
