@@ -29,10 +29,11 @@ e avisa o motorista na tela que o limite da via foi atingido.
                 if(this.velocidade + 20 <= this.limiteMaximo){
                     this.velocidade += 20;
                     return"";
-                }
-            }else{
+                }else{
                 this.velocidade = this.limiteMaximo;
                 return "Aviso: Limite de 60 km/h e via atingido";
+            }
+
             }
         };
         function correr(){
