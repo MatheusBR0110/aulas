@@ -29,9 +29,13 @@ para aproveitar o cálculo pronto do método vizinho.
                 return (this.n1 + this.n2)/2;
             },
             obterSituacao: function(){
-                if(this.calcularMedia() >= 6)
-                return "Aprovado com média" + this.calcularMedia()
-            }
+                if(this.calcularMedia() >= 6){
+                return "Aprovado com média" + this.calcularMedia();
+
+            }else{return "Reprovado com média" + this.calcularMedia();}
+        }};
+        function verificarBoletim(){
+            document.getElementById("txtResultado").innerText += boletim.obterSituacao();
         }
     </script>
 </body>
